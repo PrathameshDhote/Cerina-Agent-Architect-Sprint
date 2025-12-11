@@ -1,0 +1,16 @@
+venv/
+
+.env
+
+__pycache__/
+
+cerina_logs/
+
+cerina_protocol.db
+cerina_protocol.db-shm
+cerina_protocol.db-wal
+*.sqlite3
+*.log
+.DS_Store
+.idea/
+.vscode/
