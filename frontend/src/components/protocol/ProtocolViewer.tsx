@@ -159,7 +159,7 @@ export const ProtocolViewer: React.FC = () => {
             </MetadataSection>
 
             <MetadataSection title="Quality Metrics">
-              <MetadataRow label="Quality Score" value={`${(qualityScore * 100).toFixed(1)}%`} />
+              <MetadataRow label="Quality Score" value={`${(qualityScore * 10).toFixed(1)}%`} />
               <MetadataRow label="Safety Flags" value={safetyFlags.toString()} />
               <MetadataRow label="Critic Reviews" value={currentProtocol.critic_feedbacks_count.toString()} />
             </MetadataSection>

@@ -330,7 +330,7 @@ export const ProtocolGenerator: React.FC = () => {
             size="lg"
             isLoading={isGenerating}
             disabled={isGenerating}
-            className="flex-1"
+            className="flex1 bg-blue-600 hover:bg-blue-700 text-white"  // ⭐ ADD THIS
             leftIcon={
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -345,9 +345,11 @@ export const ProtocolGenerator: React.FC = () => {
             variant="ghost"
             onClick={handleClear}
             disabled={isGenerating}
+            className="text-gray-700 hover:bg-gray-100"  // ⭐ ADD THIS
           >
             Clear
           </Button>
+
         </div>
 
         {/* Progress Info */}

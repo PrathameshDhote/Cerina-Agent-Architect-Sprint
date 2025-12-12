@@ -159,6 +159,7 @@ export const ApprovalPanel: React.FC = () => {
           variant={mode === 'review' ? 'primary' : 'ghost'}
           size="sm"
           onClick={() => setMode('review')}
+          className={mode === 'review' ? 'bg-blue-600 hover:bg-blue-700 text-white' : 'text-gray-700 hover:bg-gray-100'}
         >
           Review Mode
         </Button>
@@ -169,6 +170,7 @@ export const ApprovalPanel: React.FC = () => {
             setMode('edit');
             setEditedDraft(currentProtocol.current_draft);
           }}
+          className={mode === 'edit' ? 'bg-blue-600 hover:bg-blue-700 text-white' : 'text-gray-700 hover:bg-gray-100'}
         >
           Edit Mode
         </Button>
@@ -185,7 +187,7 @@ export const ApprovalPanel: React.FC = () => {
             rows={4}
           />
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 flex-wrap">
             <Button
               variant="success"
               onClick={handleApprove}
@@ -195,6 +197,7 @@ export const ApprovalPanel: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               }
+              className="bg-green-600 hover:bg-green-700 text-white w-full sm:w-auto"
             >
               Approve Protocol
             </Button>
@@ -208,6 +211,7 @@ export const ApprovalPanel: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               }
+              className="bg-red-600 hover:bg-red-700 text-white w-full sm:w-auto"
             >
               Request Revisions
             </Button>
@@ -226,7 +230,7 @@ export const ApprovalPanel: React.FC = () => {
             className="font-mono text-sm"
           />
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 flex-wrap">
             <Button
               variant="primary"
               onClick={handleEdit}
@@ -236,6 +240,7 @@ export const ApprovalPanel: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               }
+              className="bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-auto"
             >
               Save & Approve
             </Button>
@@ -246,6 +251,7 @@ export const ApprovalPanel: React.FC = () => {
                 setMode('review');
                 setEditedDraft(currentProtocol.current_draft);
               }}
+              className="text-gray-700 hover:bg-gray-100 w-full sm:w-auto"
             >
               Cancel
             </Button>
