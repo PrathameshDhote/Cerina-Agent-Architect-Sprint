@@ -199,18 +199,33 @@ The system will bypass the UI halt (using the source="mcp" logic) and return the
 cerina-protocol-foundry/
 ├── backend/
 │   ├── agents/                 # Agent Definitions
+|   |   ├── base_agent.py              
 │   │   ├── supervisor.py       # Orchestration Logic
 │   │   ├── drafter.py          # CBT Content Generator
 │   │   ├── safety_guardian.py  # Safety Validation
 │   │   └── clinical_critic.py  # Quality Assurance
 │   ├── api/                    # FastAPI Routes
+|   |   ├── dependencies.py
+|   |   ├── error_handlers.py
+|   |   ├── middleware.py
 │   │   ├── routes.py           # Main Endpoints
 │   │   └── websocket.py        # Real-time Streaming
 │   ├── graph/                  # LangGraph Topology
+|   |   ├── nodes.py
+|   |   ├── streaming.py
 │   │   ├── workflow.py         # Graph Construction
 │   │   └── edges.py            # Routing Logic
 │   ├── state/                  # Pydantic State Models
-│   │   └── protocol_state.py   # "The Blackboard"
+│   │   ├── protocol_state.py   # "The Blackboard"
+|   |   └── schemas.py
+|   ├── models/
+|   |   ├── llm_client.py
+|   |   └── prompts.py
+|   ├── utils/
+|   |   ├──helpers.py
+|   |   ├── logger.py
+|   |   └── validators.py
+|   ├── config.py
 │   ├── database.py             # SQLite/Postgres Checkpointers
 │   ├── main.py                 # App Entry Point
 │   └── mcp_server.py           # MCP Integration Server
